@@ -4,5 +4,18 @@ builds:
     entry: elec/src/micromppt.ato:Micromppt
   spv1040t:
     entry: elec/src/spv1040t.ato:Spv1040t
+  spv1040:
+    entry: elec/src/spv1040.ato:Spv1040
 dependencies:
-- generics
+- name: generics
+  version_spec: '@2b1dae37e5d4978345d7fa372efb5f512e4cd187'
+  link_broken: true
+  path: elec/src/generics
+- name: xt-connectors
+  version_spec: '@3719ec970da96df05b6763671993ca2276df968b'
+  link_broken: true
+  path: elec/src/xt-connectors
+- name: usb-connectors
+  version_spec: '@1be66943895494857495c3afe24389a895b9fac8'
+  link_broken: true
+  path: elec/src/usb-connectors

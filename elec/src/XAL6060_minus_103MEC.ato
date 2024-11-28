@@ -1,0 +1,9 @@
+component XAL6060_minus_103MEC:
+    # component XAL6060_minus_103MEC
+    footprint = "IND-SMD_L6.6-W6.4"
+    lcsc_id = "C5329540"
+    mpn = "C5329540"
+    # pins
+    signal p2 ~ pin 2
+    signal p1 ~ pin 1
+
