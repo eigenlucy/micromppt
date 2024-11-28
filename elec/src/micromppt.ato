@@ -13,7 +13,6 @@ module Micromppt:
     # Power
     Vpv = new Power
     Vbat = new Power
-    Vpv.gnd ~ Vbat.gnd
 
     # Components
     ic = new _SPV1040T
@@ -34,7 +33,7 @@ module Micromppt:
     Dout = new _1N5908
     Vpv_Conn = new XT30_Male_Right_Angle
 
-    Vpv ~ Vpv_Conn.power
+    Vpv.vcc ~ Vpv_Conn.vin; Vpv.gnd ~ Vpv_Conn.gnd; Vbat.gnd ~ Vpv_Conn.gnd
     Vpv ~ Cin.power
     Vpv.vcc ~ R3.p1; R3.p2 ~ ic.MPP_minus_SET; ic.MPP_minus_SET ~ Cinsns.p1; Cinsns.p2 ~ Vpv.gnd
     Vpv.vcc ~ SW_L.p1; SW_L.p2 ~ ic.LX
