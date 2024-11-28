@@ -15,32 +15,18 @@ module Micromppt:
 
     # Components
     ic = new _SPV1040T
-    R1 = new Resistor; R1.value = 1Mohm +/- 5%; R1.package = R0402
-    R2 = new Resistor; R2.value = 1Mohm +/- 10%; R2.package = R0402 # Check value, maybe pot?
-    R3 = new Resistor; R3.value = 1kohm +/- 10%; R3.package = R0402
-    Rf1 = new Resistor; Rf1.value = 1kohm +/- 10%; R2.package = R0402
-    Rf2 = new Resistor; Rf2.value = 10kohm +/- 10%; Rf2.package = R0402
-    Rs = new Resistor
-    Rs.value = 10mohm +/- 5%
-    Rs.package = 1206
-    Cin = new Capacitor
-    Cin.value = 10uF +/- 20%
-    Cin.package = C0603
-    Cout1 = new Capacitor
-    Cout1.value = 4.7uF +/- 20%
-    Cout1.package = C0603
-    Cout2 = new Capacitor
-    Cout2.value = 10uF +/- 20%
-    Cout2.package = C0603
-    Cinsns = new Capacitor
-    Cinsns.value = 100nF +/- 20%
-    Cinsns.package = C0402
-    Coutsns = new Capacitor
-    Coutsns.value = 1nF +/- 20%
-    Coutsns.package = C0402
-    Cf = new Capacitor
-    Cf.value = 1uF +/- 20%
-    Cf.package = C0402
+    R1 = new Resistor; R1.value = 1Mohm +/- 10%; R1.package = "0402"
+    R2 = new Resistor; R2.value = 1Mohm +/- 10%; R2.package = "0402" # Check value, maybe pot?
+    R3 = new Resistor; R3.value = 1kohm +/- 10%; R3.package = "0402"
+    Rf1 = new Resistor; Rf1.value = 1kohm +/- 10%; R2.package = "0402"
+    Rf2 = new Resistor; Rf2.value = 10kohm +/- 10%; Rf2.package = "0402"
+    Rs = new Resistor; Rs.value = 10mohm +/- 5%; Rs.package = "1206"
+    Cin = new Capacitor; Cin.value = 10uF +/- 20%; Cin.package = "0603"
+    Cout1 = new Capacitor; Cout1.value = 4.7uF +/- 20%; Cout1.package = "0603"
+    Cout2 = new Capacitor; Cout2.value = 10uF +/- 20%; Cout2.package = "0603"
+    Cinsns = new Capacitor; Cinsns.value = 100nF +/- 20%; Cinsns.package = "0402"
+    Coutsns = new Capacitor; Coutsns.value = 1nF +/- 20%; Coutsns.package = "0402"
+    Cf = new Capacitor; Cf.value = 1uF +/- 20%; Cf.package = "0402"
     SW_L = new XAL6060_minus_103MEC
     Dout = new _1N5908
     Vpv_Conn = new XT30_Male_Right_Angle
