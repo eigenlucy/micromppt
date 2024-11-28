@@ -7,16 +7,19 @@ from "xt-connectors/xt-connectors.ato" import XT30_Male_Right_Angle
 from "XAL6060_minus_103MEC.ato" import XAL6060_minus_103MEC
 from "_1N5908.ato" import _1N5908
 from "spv1040t.ato" import _SPV1040T
+from "_3224W_minus_1_minus_105E.ato" import _3224W_minus_1_minus_105E
 
 module Micromppt:
     # Power
     Vpv = new Power
     Vbat = new Power
+    Vpv.gnd ~ Vbat.gnd
 
     # Components
     ic = new _SPV1040T
     R1 = new Resistor; R1.value = 1Mohm +/- 10%; R1.package = "0402"
-    R2 = new Resistor; R2.value = 1Mohm +/- 10%; R2.package = "0402" # Check value, maybe pot?
+    VR2 = new _3224W_minus_1_minus_105E
+    R2 = new Resistor; R2.value = 330kohm +/- 10%; R2.package = "0402" # Check value, maybe pot?
     R3 = new Resistor; R3.value = 1kohm +/- 10%; R3.package = "0402"
     Rf1 = new Resistor; Rf1.value = 1kohm +/- 10%; R2.package = "0402"
     Rf2 = new Resistor; Rf2.value = 10kohm +/- 10%; Rf2.package = "0402"
@@ -37,6 +40,9 @@ module Micromppt:
     Vpv.vcc ~ SW_L.p1; SW_L.p2 ~ ic.LX
     ic.VCTRL ~ Coutsns.p1; Coutsns.p2 ~ Vpv.gnd
     ic.VOUT ~ Rs.p1; ic.VOUT ~ Dout.cathode; Dout.anode ~ Vpv.gnd
-    ic.VOUT ~ Cout1.p1; Cout1.p2 ~ Vpv.gnd; ic.VOUT ~ Cout2.p1; Cout2.p2 ~ Vpv.gnd
+    ic.VOUT ~ Cout1.p1; Cout1.p2 ~ Vpv.gnd
     ic.ICTRL_PLUS ~ Cf.p1; ic.ICTRL_PLUS ~ Rf1.p1; Rf1.p2 ~ Rs.p1
-    ic.ICTRL_MINUS ~ Cf.p2; ic.ICTRL_MINUS ~ Rf2.p1
+    ic.ICTRL_MINUS ~ Cf.p2; ic.ICTRL_MINUS ~ Rf2.p1; Rf2.p2 ~ Rs.p2
+    Rs.p2 ~ R1.p1; R1.p2 ~ VR2.p2; VR2.p3 ~ R2.p1; R2.p2 ~ Vpv.gnd
+    Rs.p2 ~ Vbat.vcc; Vbat ~ Cout2.power
+
