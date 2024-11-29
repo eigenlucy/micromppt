@@ -1,0 +1,9 @@
+component SD05C_minus_01FTG_C5299440:
+    # component SD05C_minus_01FTG_C5299440
+    footprint = "SOD-323_L1.7-W1.3-LS2.5-BI-1"
+    lcsc_id = "C5299440"
+    mpn = "C5299440"
+    # pins
+    signal _1 ~ pin 1
+    signal _2 ~ pin 2
+

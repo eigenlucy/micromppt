@@ -1,0 +1,18 @@
+component SRV05_minus_4_minus_P_minus_T7_C19829547:
+    # component SRV05_minus_4_minus_P_minus_T7_C19829547
+    footprint = "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
+    lcsc_id = "C19829547"
+    mpn = "C19829547"
+    # pins
+    signal _6 ~ pin 6
+    signal _5 ~ pin 5
+    signal _4 ~ pin 4
+    signal _3 ~ pin 3
+    signal _2 ~ pin 2
+    signal _1 ~ pin 1
+    signal cathode
+    signal anode
+
+    cathode ~ _6; _6 ~ _5; _5 ~ _4
+    anode ~ _3; _3 ~ _2; _2 ~ _1
+
