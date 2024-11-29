@@ -12,6 +12,7 @@ from "SRV05_minus_4_minus_P_minus_T7_C19829547.ato" import SRV05_minus_4_minus_P
 
 module Micromppt:
     # Power
+    power = new Power
     Vpv = new Power
     Vbat = new Power
 
@@ -22,8 +23,8 @@ module Micromppt:
     R2 = new Resistor; R2.value = 330kohm +/- 10%; R2.package = "0402" # Check value, maybe pot?
     R3 = new Resistor; R3.value = 1kohm +/- 10%; R3.package = "0402"
     VR4 = new _3224W_minus_1_minus_105E
-    Rf1 = new Resistor; Rf1.value = 1kohm +/- 10%; R2.package = "0402"
-    Rf2 = new Resistor; Rf2.value = 10kohm +/- 10%; Rf2.package = "0402"
+    Rf1 = new Resistor; Rf1.value = 1kohm +/- 10%; Rf1.package = "0402"
+    Rf2 = new Resistor; Rf2.value = 1kohm +/- 10%; Rf2.package = "0402"
     Rs = new Resistor; Rs.value = 10mohm +/- 5%; Rs.package = "1206"
     Cin = new Capacitor; Cin.value = 10uF +/- 20%; Cin.package = "0603"
     Cout1 = new Capacitor; Cout1.value = 4.7uF +/- 20%; Cout1.package = "0603"
@@ -36,16 +37,19 @@ module Micromppt:
     Vpv_Conn = new XT30_Male_Right_Angle
     Vbat_Conn = new XT30_Male_Right_Angle
 
-    Vpv.vcc ~ Vpv_Conn.vin; Vpv.gnd ~ Vpv_Conn.gnd; Vbat.gnd ~ Vpv_Conn.gnd
+    Vpv.vcc ~ Vpv_Conn.vin; Vpv.gnd ~ Vpv_Conn.gnd; power.gnd ~ Vpv_Conn.gnd
+    Vbat.vcc ~ Vbat_Conn.vin; Vbat.gnd ~ Vbat_Conn.gnd; Vbat.gnd ~ power.gnd
+    ic.GND ~ power.gnd
     Vpv ~ Cin.power
     Vpv.vcc ~ R3.p1; R3.p2 ~ ic.MPP_minus_SET; ic.MPP_minus_SET ~ Cinsns.p1; Cinsns.p2 ~ Vpv.gnd
-    ic.MPP_minus_SET ~ VR4.p2; VR4.p3 ~ Vpv.gnd
+    ic.XSHUT ~ ic.MPP_minus_SET
+    ic.MPP_minus_SET ~ VR4.p2; VR4.p3 ~ power.gnd
     Vpv.vcc ~ SW_L.p1; SW_L.p2 ~ ic.LX
-    ic.VCTRL ~ Coutsns.p1; Coutsns.p2 ~ Vpv.gnd
-    ic.VOUT ~ Rs.p1; ic.VOUT ~ Dout.cathode; Dout.anode ~ Vpv.gnd
-    ic.VOUT ~ Cout1.p1; Cout1.p2 ~ Vpv.gnd
+    ic.VCTRL ~ Coutsns.p1; Coutsns.p2 ~ power.gnd
+    ic.VOUT ~ Rs.p1; ic.VOUT ~ Dout.cathode; Dout.anode ~ power.gnd
+    ic.VOUT ~ Cout1.p1; Cout1.p2 ~ power.gnd
     ic.ICTRL_PLUS ~ Cf.p1; ic.ICTRL_PLUS ~ Rf1.p1; Rf1.p2 ~ Rs.p1
     ic.ICTRL_MINUS ~ Cf.p2; ic.ICTRL_MINUS ~ Rf2.p1; Rf2.p2 ~ Rs.p2
-    Rs.p2 ~ R1.p1; R1.p2 ~ VR2.p2; VR2.p3 ~ R2.p1; R2.p2 ~ Vpv.gnd
+    Rs.p2 ~ R1.p1; R1.p2 ~ VR2.p2; VR2.p3 ~ R2.p1; R2.p2 ~ power.gnd
     Rs.p2 ~ Vbat.vcc; Vbat ~ Cout2.power
-    Vbat.vcc ~ Vbat_Conn.vin; Vbat.gnd ~ Vbat_Conn.gnd
+
