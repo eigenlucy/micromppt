@@ -1,0 +1,12 @@
+Warning: Width correction constrained.  The width correction value must be in the range of [0.000001 mm; 0.199999 mm] for the current design rules.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-F_Cu.gbr'.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-B_Cu.gbr'.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-F_Paste.gbr'.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-B_Paste.gbr'.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-F_Silkscreen.gbr'.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-B_Silkscreen.gbr'.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-F_Mask.gbr'.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-B_Mask.gbr'.
+Plotted to '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-Edge_Cuts.gbr'.
+Created Gerber job file '/home/lucy/Documents/atopile/micromppt/gerbers/micromppt-job.gbrjob'.
+Info: Done.

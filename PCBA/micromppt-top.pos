@@ -1,0 +1,25 @@
+### Footprint positions - created on 2024-12-04T14:33:44-0800 ###
+### Printed by KiCad version 8.0.6
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                                                                                          Package                                 PosX       PosY       Rot  Side
+C1        10V_10uF_X5R_±10%_0603_Multilayer_Ceramic_Capacitors_MLCC_-_SMD/SMT_ROHS                    C0603                                69.9750   -52.0000  180.0000  top
+C2        16V_4.7uF_X5R_±10%_0603_Multilayer_Ceramic_Capacitors_MLCC_-_SMD/SMT_ROHS                   C0603                                81.6250   -51.0000    0.0000  top
+C3        10V_10uF_X5R_±10%_0603_Multilayer_Ceramic_Capacitors_MLCC_-_SMD/SMT_ROHS                    C0603                                90.0000   -51.2750   90.0000  top
+C4        16V_100nF_X7R_±10%_0402_Multilayer_Ceramic_Capacitors_MLCC_-_SMD/SMT_ROHS                   C0402                                86.0800   -43.6000    0.0000  top
+C5        50V_1nF_X7R_±10%_0402_Multilayer_Ceramic_Capacitors_MLCC_-_SMD/SMT_ROHS                     C0402                                86.4800   -48.0000    0.0000  top
+C6        25V_1uF_X5R_±10%_0402_Multilayer_Ceramic_Capacitors_MLCC_-_SMD/SMT_ROHS                     C0402                                87.7125   -46.1000  -90.0000  top
+J1        ?                                                                                            CONN-TH_XT30PW-M                     72.0000   -59.7500    0.0000  top
+J2        ?                                                                                            CONN-TH_XT30PW-M                     86.7500   -59.7500    0.0000  top
+R1        62.5mW_Thick_Film_Resistors_50V_±100ppm/℃_±1%_1MΩ_0402_Chip_Resistor_-_Surface_Mount_ROHS  R0402                                83.0000   -52.2500  180.0000  top
+R2        62.5mW_Thick_Film_Resistors_50V_±100ppm/℃_±1%_300kΩ_0402_Chip_Resistor_-_Surface_Mount_ROHS  R0402                                80.9000   -57.6000    0.0000  top
+R3        62.5mW_Thick_Film_Resistors_50V_±100ppm/℃_±1%_1kΩ_0402_Chip_Resistor_-_Surface_Mount_ROHS  R0402                                74.2500   -42.0000    0.0000  top
+R4        62.5mW_Thick_Film_Resistors_50V_±100ppm/℃_±1%_1kΩ_0402_Chip_Resistor_-_Surface_Mount_ROHS  R0402                                89.4625   -45.5400    0.0000  top
+R5        62.5mW_Thick_Film_Resistors_50V_±100ppm/℃_±1%_1kΩ_0402_Chip_Resistor_-_Surface_Mount_ROHS  R0402                                89.4725   -46.5400    0.0000  top
+R6        1W_10mΩ_±70ppm/℃_±1%_1206_Current_Sense_Resistors_/_Shunt_Resistors_ROHS                R1206                                82.4625   -49.1000    0.0000  top
+U1        ?                                                                                            TSSOP-8_L4.4-W3.0-P0.65-LS6.4-BL     83.2125   -46.1000  -90.0000  top
+U2        ?                                                                                            RES-ADJ-SMD_3224W                    78.9000   -54.3500    0.0000  top
+U3        ?                                                                                            RES-ADJ-SMD_3224W                    78.2500   -41.7500    0.0000  top
+U4        ?                                                                                            IND-SMD_L6.6-W6.4                    72.0000   -47.7500    0.0000  top
+U5        ?                                                                                            SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR    77.9000   -49.2500  180.0000  top
+## End
