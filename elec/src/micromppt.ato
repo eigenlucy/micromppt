@@ -6,7 +6,7 @@ from "generics/diodes.ato" import Diode
 from "xt-connectors/xt-connectors.ato" import XT30_Male_Right_Angle
 from "XAL6060_minus_103MEC.ato" import XAL6060_minus_103MEC
 from "_1N5908.ato" import _1N5908
-from "spv1040t.ato" import _SPV1040T
+from "SPV1040T.ato" import SPV1040T
 from "_3224W_minus_1_minus_105E.ato" import _3224W_minus_1_minus_105E
 from "SRV05_minus_4_minus_P_minus_T7_C19829547.ato" import SRV05_minus_4_minus_P_minus_T7_C19829547
 
@@ -17,7 +17,7 @@ module Micromppt:
     Vbat = new Power
 
     # Components
-    ic = new _SPV1040T
+    ic = new SPV1040T
     R1 = new Resistor; R1.value = 1Mohm +/- 10%; R1.package = "0402"
     VR2 = new _3224W_minus_1_minus_105E
     R2 = new Resistor; R2.value = 330kohm +/- 10%; R2.package = "0402" # Check value, maybe pot?
