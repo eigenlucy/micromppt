@@ -482,7 +482,7 @@
       "idf": "",
       "netlist": "../../../build/default.net",
       "plot": "../../../gerbers/",
-      "pos_files": "../../../gerbers/",
+      "pos_files": "../../../PCBA/",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
