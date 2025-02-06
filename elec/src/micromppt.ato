@@ -3,7 +3,7 @@ from "generics/inductors.ato" import Inductor
 from "generics/capacitors.ato" import Capacitor
 from "generics/resistors.ato" import Resistor
 from "generics/diodes.ato" import Diode
-from "xt-connectors/xt-connectors.ato" import XT30_Male_Right_Angle
+from "generics/connectors.ato" import Connector2Pin
 from "XAL6060_minus_103MEC.ato" import XAL6060_minus_103MEC
 from "_1N5908.ato" import _1N5908
 from "SPV1040T.ato" import SPV1040T
@@ -23,7 +23,6 @@ module Micromppt:
     VR2 = new _3224W_minus_1_minus_105E
     R2 = new Resistor; R2.value = 330kohm +/- 10%; R2.package = "0402" # Check value, maybe pot?
     R3 = new Resistor; R3.value = 1kohm +/- 10%; R3.package = "0402"
-    VR4 = new _3224W_minus_1_minus_105E
     Rf1 = new Resistor; Rf1.value = 1kohm +/- 10%; Rf1.package = "0402"
     Rf2 = new Resistor; Rf2.value = 1kohm +/- 10%; Rf2.package = "0402"
     Rs = new Resistor; Rs.value = 10mohm +/- 5%; Rs.package = "1206"
@@ -35,24 +34,22 @@ module Micromppt:
     Cf = new Capacitor; Cf.value = 1uF +/- 20%; Cf.package = "0402"
     SW_L = new XAL6060_minus_103MEC
     Dout = new SRV05_minus_4_minus_P_minus_T7_C19829547
-    Vpv_Conn = new XT30_Male_Right_Angle
-    Vbat_Conn = new XT30_Male_Right_Angle
+    Vpv_Conn = new Connector2Pin; Vpv_Conn.footprint = "Plugin,P=2.54mm"
+    Vbat_Conn = new Connector2Pin; Vbat_Conn.footprint = "Plugin,P=2.54mm"
 
-    Vpv.vcc ~ Vpv_Conn.vin; Vpv.gnd ~ Vpv_Conn.gnd; power.gnd ~ Vpv_Conn.gnd
-    Vbat.vcc ~ Vbat_Conn.vin; Vbat.gnd ~ Vbat_Conn.gnd; Vbat.gnd ~ power.gnd
+    Vpv.vcc ~ Vpv_Conn.p1; Vpv.gnd ~ Vpv_Conn.p2; power.gnd ~ Vpv_Conn.p2
+    Vbat.vcc ~ Vbat_Conn.p1; Vbat.gnd ~ Vbat_Conn.p2; Vbat.gnd ~ power.gnd
     ic.GND ~ power.gnd
     Vpv ~ Cin.power
     Vpv.vcc ~ R3.p1; R3.p2 ~ ic.MPP_minus_SET; ic.MPP_minus_SET ~ Cinsns.p1; Cinsns.p2 ~ Vpv.gnd
     signal XSHUT; XSHUT ~ ic.XSHUT # Shutdown/enable pin. Connect to MPPT-SET to startup from solar panel Vin
     ic.XSHUT ~ ic.MPP_minus_SET
-    ic.MPP_minus_SET ~ VR4.p2; VR4.p3 ~ power.gnd
     Vpv.vcc ~ SW_L.p1; SW_L.p2 ~ ic.LX
     ic.VCTRL ~ Coutsns.p1; Coutsns.p2 ~ power.gnd
     ic.VOUT ~ Rs.p1; ic.VOUT ~ Dout.cathode; Dout.anode ~ power.gnd
     ic.VOUT ~ Cout1.p1; Cout1.p2 ~ power.gnd
     ic.ICTRL_PLUS ~ Cf.p1; ic.ICTRL_PLUS ~ Rf1.p1; Rf1.p2 ~ Rs.p1
     ic.ICTRL_MINUS ~ Cf.p2; ic.ICTRL_MINUS ~ Rf2.p1; Rf2.p2 ~ Rs.p2
-    Rs.p2 ~ R1.p1; R1.p2 ~ ic.VOUT
+    Rs.p2 ~ R1.p1; R1.p2 ~ ic.VCTRL
     R1.p2 ~ VR2.p2; VR2.p3 ~ R2.p1; R2.p2 ~ power.gnd
     Rs.p2 ~ Vbat.vcc; Vbat ~ Cout2.power
-
