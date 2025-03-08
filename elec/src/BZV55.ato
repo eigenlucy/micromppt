@@ -1,0 +1,9 @@
+component BZV55:
+    # component BZV55
+    footprint = "SOD-80_L3.5-W1.5-RD"
+    lcsc_id = "C282535"
+    mpn = "C282535"
+    # pins
+    signal C ~ pin 1
+    signal A ~ pin 2
+
