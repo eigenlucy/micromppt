@@ -9,19 +9,21 @@ from "_1N5908.ato" import _1N5908
 from "SPV1040T.ato" import SPV1040T
 from "_3224W_minus_1_minus_105E.ato" import _3224W_minus_1_minus_105E
 from "SRV05_minus_4_minus_P_minus_T7_C19829547.ato" import SRV05_minus_4_minus_P_minus_T7_C19829547
+from "irlml5203.ato" import irlml5203
+from "BZV55.ato" import BZV55
 
 module Micromppt:
     # Based on STEVAL-ISV006V2 schematic
     # Power
     power = new Power
     Vpv = new Power
+    Vpvr = new Power
     Vbat = new Power
 
     # Components
     ic = new SPV1040T
     R1 = new Resistor; R1.value = 1Mohm +/- 10%; R1.package = "0402"
-    VR2 = new _3224W_minus_1_minus_105E
-    R2 = new Resistor; R2.value = 330kohm +/- 10%; R2.package = "0402" # Check value, maybe pot?
+    R2 = new Resistor; R2.value = 330kohm +/- 10%; R2.package = "0402"
     R3 = new Resistor; R3.value = 1kohm +/- 10%; R3.package = "0402"
     Rf1 = new Resistor; Rf1.value = 1kohm +/- 10%; Rf1.package = "0402"
     Rf2 = new Resistor; Rf2.value = 1kohm +/- 10%; Rf2.package = "0402"
@@ -38,18 +40,25 @@ module Micromppt:
     Vbat_Conn = new Connector2Pin
 
     Vpv.vcc ~ Vpv_Conn.p1; Vpv.gnd ~ Vpv_Conn.p2; power.gnd ~ Vpv_Conn.p2
+    # OVP
+    IN_FET = new irlml5203
+    IN_Zener = new BZV55
+    R_InputPullup = new Resistor; R_InputPullup.value = 10kohm +/- 20%; R_InputPullup.package = "0402"
+    IN_FET.D ~ Vpv.vcc; IN_FET.S ~ Vpvr.vcc
+    IN_FET.S ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.gnd
+
     Vbat.vcc ~ Vbat_Conn.p1; Vbat.gnd ~ Vbat_Conn.p2; Vbat.gnd ~ power.gnd
     ic.GND ~ power.gnd
-    Vpv ~ Cin.power
-    Vpv.vcc ~ R3.p1; R3.p2 ~ ic.MPP_minus_SET; ic.MPP_minus_SET ~ Cinsns.p1; Cinsns.p2 ~ Vpv.gnd
+    Vpvr ~ Cin.power
+    Vpvr.vcc ~ R3.p1; R3.p2 ~ ic.MPP_minus_SET; ic.MPP_minus_SET ~ Cinsns.p1; Cinsns.p2 ~ power.gnd
     signal XSHUT; XSHUT ~ ic.XSHUT # Shutdown/enable pin. Connect to MPPT-SET to startup from solar panel Vin
     ic.XSHUT ~ ic.MPP_minus_SET
-    Vpv.vcc ~ SW_L.p1; SW_L.p2 ~ ic.LX
+    Vpvr.vcc ~ SW_L.p1; SW_L.p2 ~ ic.LX
     ic.VCTRL ~ Coutsns.p1; Coutsns.p2 ~ power.gnd
     ic.VOUT ~ Rs.p1; ic.VOUT ~ Dout.cathode; Dout.anode ~ power.gnd
     ic.VOUT ~ Cout1.p1; Cout1.p2 ~ power.gnd
     ic.ICTRL_PLUS ~ Cf.p1; ic.ICTRL_PLUS ~ Rf1.p1; Rf1.p2 ~ Rs.p1
     ic.ICTRL_MINUS ~ Cf.p2; ic.ICTRL_MINUS ~ Rf2.p1; Rf2.p2 ~ Rs.p2
     Rs.p2 ~ R1.p1; R1.p2 ~ ic.VCTRL
-    R1.p2 ~ VR2.p2; VR2.p3 ~ R2.p1; R2.p2 ~ power.gnd
+    R1.p2 ~ R2.p1; R2.p2 ~ power.gnd # This divider sets the output voltage
     Rs.p2 ~ Vbat.vcc; Vbat ~ Cout2.power
