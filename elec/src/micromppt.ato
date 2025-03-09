@@ -10,7 +10,8 @@ from "SPV1040T.ato" import SPV1040T
 from "_3224W_minus_1_minus_105E.ato" import _3224W_minus_1_minus_105E
 from "SRV05_minus_4_minus_P_minus_T7_C19829547.ato" import SRV05_minus_4_minus_P_minus_T7_C19829547
 from "irlml5203.ato" import irlml5203
-from "BZV55.ato" import BZV55
+from "bzx384.ato" import bzx384
+from "XH_minus_2PS.ato" import XH_minus_2PS
 
 module Micromppt:
     # Based on STEVAL-ISV006V2 schematic
@@ -36,20 +37,21 @@ module Micromppt:
     Cf = new Capacitor; Cf.value = 1uF +/- 20%; Cf.package = "0402"
     SW_L = new XAL6060_minus_103MEC
     Dout = new SRV05_minus_4_minus_P_minus_T7_C19829547
-    Vpv_Conn = new Connector2Pin
-    Vbat_Conn = new Connector2Pin
-
+    Vpv_Conn = new XH_minus_2PS
+    Vbat_Conn = new XH_minus_2PS
     Vpv.vcc ~ Vpv_Conn.p1; Vpv.gnd ~ Vpv_Conn.p2; power.gnd ~ Vpv_Conn.p2
+    Vpv_Conn.p3 ~ power.gnd; Vpv_Conn.p4 ~ power.gnd
     # OVP
     IN_FET = new irlml5203
-    IN_Zener = new BZV55
+    IN_Zener = new bzx384
     R_InputPullup = new Resistor; R_InputPullup.value = 10kohm +/- 20%; R_InputPullup.package = "0402"
     IN_FET.D ~ Vpv.vcc; IN_FET.S ~ Vpvr.vcc
     IN_FET.S ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.gnd
 
     Vbat.vcc ~ Vbat_Conn.p1; Vbat.gnd ~ Vbat_Conn.p2; Vbat.gnd ~ power.gnd
+    power.gnd ~ Vbat_Conn.p3; power.gnd ~ Vbat_Conn.p4
     ic.GND ~ power.gnd
-    Vpvr ~ Cin.power
+    Vpvr.vcc ~ Cin.p1; Cin.p2 ~ power.gnd
     Vpvr.vcc ~ R3.p1; R3.p2 ~ ic.MPP_minus_SET; ic.MPP_minus_SET ~ Cinsns.p1; Cinsns.p2 ~ power.gnd
     signal XSHUT; XSHUT ~ ic.XSHUT # Shutdown/enable pin. Connect to MPPT-SET to startup from solar panel Vin
     ic.XSHUT ~ ic.MPP_minus_SET
