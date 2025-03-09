@@ -1,0 +1,9 @@
+component MINISMDC260F_slash_16:
+    # component MINISMDC260F_slash_16
+    footprint = "F1812"
+    lcsc_id = "C16490"
+    mpn = "C16490"
+    # pins
+    signal p2 ~ pin 2
+    signal p1 ~ pin 1
+

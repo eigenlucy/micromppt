@@ -12,6 +12,7 @@ from "SRV05_minus_4_minus_P_minus_T7_C19829547.ato" import SRV05_minus_4_minus_P
 from "irlml5203.ato" import irlml5203
 from "bzx384.ato" import bzx384
 from "XH_minus_2PS.ato" import XH_minus_2PS
+from "MINISMDC260F_slash_16.ato" import MINISMDC260F_slash_16
 
 module Micromppt:
     # Based on STEVAL-ISV006V2 schematic
@@ -45,7 +46,7 @@ module Micromppt:
     IN_FET = new irlml5203
     IN_Zener = new bzx384
     R_InputPullup = new Resistor; R_InputPullup.value = 10kohm +/- 20%; R_InputPullup.package = "0402"
-    IN_FET.D ~ Vpv.vcc; IN_FET.S ~ Vpvr.vcc
+    Vpv.vcc ~ IN_FET.D; IN_FET.S ~ Vpvr.vcc
     IN_FET.S ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.gnd
 
     Vbat.vcc ~ Vbat_Conn.p1; Vbat.gnd ~ Vbat_Conn.p2; Vbat.gnd ~ power.gnd
