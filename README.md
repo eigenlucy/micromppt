@@ -38,20 +38,12 @@ MicroMPPT is a tiny high-efficiency MPPT battery charging module based on the SP
 | `/elec/layout/default/micromppt.kicad_pcb` | KiCad PCB layout file |
 | `/build/builds/default` | Generated build outputs (Gerbers, BOM, 3D models) |
 
-## Key Features
+## Features
 
-- **Autonomous MPPT**: Self-adjusting maximum power point tracking using the perturb-and-observe algorithm
+- **Autonomous MPPT**: Self-adjusting maximum power point tracking using embedded autonomous perturb-and-observe algorithm
 - **Multi-chemistry Support**: Configurable for different battery types
-- **Compact Design**: Small form factor for embedded applications
+- **Compact Design**: Small form facto is built using Atopile.. Adjust output voltage with Vctrl divider.
 - **Overvoltage Protection**: Prevents damage from excessive input voltage
-- **High Efficiency**: Optimizes energy transfer from solar panels
-
-## Circuit Operation
-
-1. **Input Stage**: Solar panel connects to the input with overvoltage protection
-2. **MPPT Control**: SPV1040T continuously adjusts the operating point to maximize power
-3. **Boost Conversion**: Steps up input voltage as needed for battery charging
-4. **Output Stage**: Regulated output for charging batteries or supercapacitors
 
 ## Output Voltage Configuration
 
@@ -60,14 +52,8 @@ The SPV1040T output voltage is set by a resistor divider connected to the VCTRL 
 $V_{out} = V_{ref} \times (1 + \frac{R1}{R2})$
 
 Where:
-- $V_{ref}$ is the internal reference voltage (1.25V for the SPV1040)
+- $V_{ref}$ = 1.25V
 - R1 and R2 form the voltage divider connected to VCTRL
-
-In the current implementation, the voltage divider uses:
-- R1 = 1MΩ
-- R2 = 330kΩ
-
-This results in an output voltage of approximately 5.04V.
 
 ### Battery Chemistry Configurations
 
