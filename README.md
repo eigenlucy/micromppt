@@ -59,11 +59,10 @@ MicroMPPT is a small, efficient solar charging solution that utilizes the SPV104
 - [Hackaday Project Page](https://hackaday.io/project/202610-micromppt)
 - [SPV1040 Datasheet](https://www.st.com/resource/en/datasheet/spv1040.pdf)
 
-## Built With Atopile
+## Requirements
 
-This project is built using [Atopile](https://atopile.io/).
-
-Check out [ATO_USAGE.md](ATO_USAGE.md)
+- This project is built using [Atopile](https://atopile.io/).Check out [ATO_USAGE.md](ATO_USAGE.md) for instructions on installation and use.
+- KICAD 9.0 for PCB layout
 
 ## License
 
