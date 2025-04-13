@@ -6,8 +6,8 @@ A compact 5W SPV1040-based MPPT (Maximum Power Point Tracking) solar charge cont
 
 MicroMPPT is a tiny high-efficiency MPPT battery charging module based on the SPV1040T chip. It features an autonomous Perturb-and-Observe set point adjustment algorithm designed to continuously adjust the converter operating point in order to maximize power output under a wide range of conditions with a variety of panels/battery chemistries.
 
-- **Input**: Solar panel (up to 5W)
-- **Output**: Configurable for different battery chemistries
+- **Input**: Solar panel (up to 5.5V, 5W max)
+- **Output**: Configurable for different battery chemistries (try to keep Vgain between Vpv and Vbat reasonable to avoid the SW_Current limit of 1.8A)
 - **Topology**: Boost converter with autonomous perturb-and-observe MPPT
 - **Features**: Overvoltage protection, efficient energy harvest, compact design
 
