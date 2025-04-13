@@ -3,7 +3,6 @@
 A compact 5W SPV1040-based MPPT (Maximum Power Point Tracking) solar charge controller designed with Meshtastic clients in mind.
 
 ![Micromppt V2 PCB Render](References/MicrompptV2Render.png)
-![Micromppt V2 Assembled](References/MicrompptV2Assembled.png)
 
 ## Overview
 
