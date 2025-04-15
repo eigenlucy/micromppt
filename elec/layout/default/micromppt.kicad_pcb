@@ -977,7 +977,7 @@
                 )
             )
         )
-        (property "Value" "10µF ±10% 10V X5R"
+        (property "Value" "10µF ±20% 6.3V X5R"
             (at 0 4 90)
             (layer "F.Fab")
             (hide no)
@@ -1025,7 +1025,7 @@
                 )
             )
         )
-        (property "LCSC" "C19702"
+        (property "LCSC" "C1691"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -1037,7 +1037,7 @@
                 )
             )
         )
-        (property "Partnumber" "CL10A106KP8NNNC"
+        (property "Partnumber" "CL10A106MQ8NNNC"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -1061,7 +1061,7 @@
                 )
             )
         )
-        (property "JLCPCB description" "10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+        (property "JLCPCB description" "6.3V 10uF X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -1085,7 +1085,7 @@
                 )
             )
         )
-        (property "PARAM_capacitance" "{\"type\": \"Quantity_Interval_Disjoint\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 8.999999985e-06, \"max\": 1.1000000015e-05}}]}}, \"unit\": \"farad\"}}"
+        (property "PARAM_capacitance" "{\"type\": \"Quantity_Interval_Disjoint\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 7.99999997e-06, \"max\": 1.200000003e-05}}]}}, \"unit\": \"farad\"}}"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -1109,7 +1109,7 @@
                 )
             )
         )
-        (property "PARAM_max_voltage" "{\"type\": \"Quantity_Set_Discrete\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 10.0, \"max\": 10.0}}]}}, \"unit\": \"volt\"}}"
+        (property "PARAM_max_voltage" "{\"type\": \"Quantity_Set_Discrete\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 6.3, \"max\": 6.3}}]}}, \"unit\": \"volt\"}}"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -1616,7 +1616,7 @@
                 )
             )
         )
-        (property "Value" "300kΩ ±1% 62.5mW"
+        (property "Value" "330kΩ ±1% 62.5mW"
             (at 0 4 90)
             (layer "F.Fab")
             (hide no)
@@ -1664,7 +1664,7 @@
                 )
             )
         )
-        (property "LCSC" "C25774"
+        (property "LCSC" "C138006"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -1676,7 +1676,7 @@
                 )
             )
         )
-        (property "Partnumber" "0402WGF3003TCE"
+        (property "Partnumber" "RC0402FR-07330KL"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -1688,7 +1688,7 @@
                 )
             )
         )
-        (property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+        (property "Manufacturer" "YAGEO"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -1700,7 +1700,7 @@
                 )
             )
         )
-        (property "JLCPCB description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 300kΩ 0402 Chip Resistor - Surface Mount ROHS"
+        (property "JLCPCB description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 330kΩ 0402 Chip Resistor - Surface Mount ROHS"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -1736,7 +1736,7 @@
                 )
             )
         )
-        (property "PARAM_resistance" "{\"type\": \"Quantity_Interval_Disjoint\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 297000.0000670552, \"max\": 302999.9999329448}}]}}, \"unit\": \"ohm\"}}"
+        (property "PARAM_resistance" "{\"type\": \"Quantity_Interval_Disjoint\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 326700.00007376075, \"max\": 333299.99992623925}}]}}, \"unit\": \"ohm\"}}"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4285,7 +4285,7 @@
                 )
             )
         )
-        (property "Value" "4.7µF ±10% 16V X5R"
+        (property "Value" "4.7µF ±10% 10V X5R"
             (at 0 4 0)
             (layer "F.Fab")
             (hide no)
@@ -4333,7 +4333,7 @@
                 )
             )
         )
-        (property "LCSC" "C19666"
+        (property "LCSC" "C1705"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4345,7 +4345,7 @@
                 )
             )
         )
-        (property "Partnumber" "CL10A475KO8NNNC"
+        (property "Partnumber" "CL10A475KP8NNNC"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4369,7 +4369,7 @@
                 )
             )
         )
-        (property "JLCPCB description" "16V 4.7uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+        (property "JLCPCB description" "10V 4.7uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4417,7 +4417,7 @@
                 )
             )
         )
-        (property "PARAM_max_voltage" "{\"type\": \"Quantity_Set_Discrete\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 16.0, \"max\": 16.0}}]}}, \"unit\": \"volt\"}}"
+        (property "PARAM_max_voltage" "{\"type\": \"Quantity_Set_Discrete\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 10.0, \"max\": 10.0}}]}}, \"unit\": \"volt\"}}"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4640,7 +4640,7 @@
                 )
             )
         )
-        (property "LCSC" "C188070"
+        (property "LCSC" "C105362"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4652,7 +4652,7 @@
                 )
             )
         )
-        (property "Partnumber" "RLM12FTCMR010"
+        (property "Partnumber" "FMF06FTHR010-LH"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4664,7 +4664,7 @@
                 )
             )
         )
-        (property "Manufacturer" "TA-I Tech"
+        (property "Manufacturer" "PSA(Prosperity Dielectrics)"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4676,7 +4676,7 @@
                 )
             )
         )
-        (property "JLCPCB description" "1W 10mΩ ±100ppm/℃ ±1% 1206 Current Sense Resistors / Shunt Resistors ROHS"
+        (property "JLCPCB description" "1W 10mΩ ±70ppm/℃ ±1% 1206 Current Sense Resistors / Shunt Resistors ROHS"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4855,7 +4855,7 @@
                 )
             )
         )
-        (property "Value" "10µF ±10% 10V X5R"
+        (property "Value" "10µF ±20% 6.3V X5R"
             (at 0 4 90)
             (layer "F.Fab")
             (hide no)
@@ -4903,7 +4903,7 @@
                 )
             )
         )
-        (property "LCSC" "C19702"
+        (property "LCSC" "C1691"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -4915,7 +4915,7 @@
                 )
             )
         )
-        (property "Partnumber" "CL10A106KP8NNNC"
+        (property "Partnumber" "CL10A106MQ8NNNC"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -4939,7 +4939,7 @@
                 )
             )
         )
-        (property "JLCPCB description" "10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+        (property "JLCPCB description" "6.3V 10uF X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
             (at 0 0 90)
             (layer "User.9")
             (hide yes)
@@ -4963,7 +4963,7 @@
                 )
             )
         )
-        (property "PARAM_capacitance" "{\"type\": \"Quantity_Interval_Disjoint\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 8.999999985e-06, \"max\": 1.1000000015e-05}}]}}, \"unit\": \"farad\"}}"
+        (property "PARAM_capacitance" "{\"type\": \"Quantity_Interval_Disjoint\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 7.99999997e-06, \"max\": 1.200000003e-05}}]}}, \"unit\": \"farad\"}}"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
@@ -4975,7 +4975,7 @@
                 )
             )
         )
-        (property "PARAM_max_voltage" "{\"type\": \"Quantity_Set_Discrete\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 10.0, \"max\": 10.0}}]}}, \"unit\": \"volt\"}}"
+        (property "PARAM_max_voltage" "{\"type\": \"Quantity_Set_Discrete\", \"data\": {\"intervals\": {\"type\": \"Numeric_Interval_Disjoint\", \"data\": {\"intervals\": [{\"type\": \"Numeric_Interval\", \"data\": {\"min\": 6.3, \"max\": 6.3}}]}}, \"unit\": \"volt\"}}"
             (at 0 0 0)
             (layer "User.9")
             (hide yes)
