@@ -47,7 +47,7 @@ module Micromppt:
     IN_Zener = new bzx384
     R_InputPullup = new Resistor; R_InputPullup.value = 10kohm +/- 20%; R_InputPullup.package = "0402"
     Vpv.vcc ~ IN_FET.D; IN_FET.S ~ Vpvr.vcc
-    IN_FET.S ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.gnd
+    IN_FET.D ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.gnd
 
     Vbat.vcc ~ Vbat_Conn.p1; Vbat.gnd ~ Vbat_Conn.p2; Vbat.gnd ~ power.gnd
     ic.GND ~ power.gnd

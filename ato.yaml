@@ -2,7 +2,7 @@ requires-atopile: ^0.4.0
 
 paths:
   src: ./elec/src
-  layout: ./elec/layouts
+  layout: ./elec/layout
   footprints: ./elec/footprints
 
 builds:
