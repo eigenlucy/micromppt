@@ -1,0 +1,29 @@
+import Resistor
+from "generics/interfaces.ato" import Power
+from "atl431.ato" import ATL431
+from "yongyutai_yled0402g.ato" import YONGYUTAI_YLED0402G
+
+"""
+ATL431 Based Window Voltage Monitor
+See details here: https://www.ti.com/lit/ds/symlink/atl431li.pdf?ts=1744777182166
+See figure 37 for schematic ref
+"""
+module VoltageWindow:
+    Vin = new Power
+    signal Vout
+    reg1 = new ATL431
+    R1A = new Resistor; R1A.package = "R0402"
+    R2A = new Resistor; R2A.package = "R0402"
+    R1A.p1 ~ Vin.vcc; R1A.p2 ~ reg1.REF; R2A.p1 ~ reg1.REF; R2A.p2 ~ reg1.A
+    R1B = new Resistor; R1B.package = "R0402"
+    R2B = new Resistor; R2B.package = "R0402"
+    R1B.p1 ~ Vin.vcc; R1B.p2 ~ reg1.K; R2B.p1 ~ reg1.K; R2B.p2 ~ Vin.gnd
+    reg2 = new ATL431
+    R2B.p1 ~ reg2.REF
+    R3 = new Resistor; R3.package = "R0402"
+    R4 = new Resistor; R4.package = "R0402"
+    R3.p1 ~ Vin.vcc; R3.p2 ~ R4.p1
+    R4.p2 ~ reg2.K; reg2.A ~ Vin.gnd
+    led = new YONGYUTAI_YLED0402G
+    led.anode ~ R3.p2; led.cathode ~ reg2.K
+    signal OUT ~ reg2.K

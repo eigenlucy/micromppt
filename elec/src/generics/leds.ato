@@ -34,7 +34,7 @@ module LEDIndicatorRed from LEDIndicator:
     led -> _KT_0603R
 
     #Assuming 3.3v input, 2V forward voltage, 5mA current
-    # resistor.value = 270ohms +/- 20%
+    resistor.value = 270ohms +/- 20%
 
 module LEDIndicatorGreen from LEDIndicator:
     led -> _KT_0603G

@@ -1,0 +1,11 @@
+component YONGYUTAI_YLED0402G:
+    """YONGYUTAI_YLED0402G component"""
+    lcsc_id = "C20608784"
+    manufacturer = "YONGYUTAI"
+    mpn = "YLED0402G"
+    datasheet_url = "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401191744_YONGYUTAI-YLED0402G_C20608784.pdf"
+    designator_prefix = "U"
+
+    # pins
+    signal anode ~ pin 1
+    signal cathode ~ pin 2

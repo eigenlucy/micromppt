@@ -42,12 +42,16 @@ module Micromppt:
     Vpv_Conn = new B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen
     Vbat_Conn = new B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen
     Vpv.vcc ~ Vpv_Conn.p1; Vpv.gnd ~ Vpv_Conn.p2; power.gnd ~ Vpv_Conn.p2
+    """
     # OVP
     IN_FET = new irlml5203
     IN_Zener = new bzx384
     R_InputPullup = new Resistor; R_InputPullup.value = 10kohm +/- 20%; R_InputPullup.package = "0402"
     Vpv.vcc ~ IN_FET.D; IN_FET.S ~ Vpvr.vcc
-    IN_FET.D ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.gnd
+    IN_FET.S ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.gnd
+    """
+    Vpv ~ Vpvr # temp fix
+
 
     Vbat.vcc ~ Vbat_Conn.p1; Vbat.gnd ~ Vbat_Conn.p2; Vbat.gnd ~ power.gnd
     ic.GND ~ power.gnd

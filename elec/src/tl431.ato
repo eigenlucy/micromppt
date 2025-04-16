@@ -1,0 +1,12 @@
+component JSMSEMI_TL431:
+    """JSMSEMI_TL431 component"""
+    lcsc_id = "C963380"
+    manufacturer = "JSMSEMI"
+    mpn = "TL431"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2308071512_JSMSEMI-TL431_C963380.pdf"
+    designator_prefix = "U"
+
+    # pins
+    signal A ~ pin 3
+    signal K ~ pin 2
+    signal R ~ pin 1

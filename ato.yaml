@@ -9,7 +9,11 @@ builds:
   default:
     entry: elec/src/micromppt.ato:Micromppt
 
+  tl431-ovp:
+    entry: /home/lucy/atopile_projects/micromppt/elec/src/tl431_ovp.ato:Tl431ovp
+  voltage-window:
+    entry: /home/lucy/atopile_projects/micromppt/elec/src/voltage_window.ato:VoltageWindow
 dependencies:
-  - type: registry
-    identifier: atopile/usb-connectors
-    release: 0.1.0
+- type: registry
+  identifier: atopile/usb-connectors
+  release: 0.1.0
