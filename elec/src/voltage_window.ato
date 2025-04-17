@@ -27,3 +27,14 @@ module VoltageWindow:
     led = new YONGYUTAI_YLED0402G
     led.anode ~ R3.p2; led.cathode ~ reg2.K
     signal OUT ~ reg2.K
+
+    # Low Cutoff = (1 + (R1B/R2B)) * Vref
+    # High Cutoff = (1 + (R1A/R2A)) * Vref
+    # OUT = HIGH in window, LOW outside window
+    # Vref = 2.5V
+
+    Vref = 2500mV
+    V_low_th = 3.1V
+    V_high_th = 4.3V
+    R1B.value = 5kohm +/- 5%; R2B.value = 20kohm +/-5% # 3.125V Low Cutoff 
+    R1A.value = 13kohm +/- 5%; R1A.value = 18kohm +/- 5% # 4.3V High Cutoff
