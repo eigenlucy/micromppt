@@ -1,4 +1,4 @@
-requires-atopile: ^0.4.0
+requires-atopile: ^0.4.1
 
 paths:
   src: ./elec/src
@@ -25,4 +25,4 @@ package:
       email: eigenlucy@proton.me
   summary: 5W autonomous MPPT boost solar battery charger with embedded perturb and observe set point adjustment algorithm
   license: MIT
-  homepage: https://eigenlucy.github.io/projects/micromppt/
+  homepage: https://github.com/eigenlucy/micromppt
