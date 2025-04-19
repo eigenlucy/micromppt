@@ -1,4 +1,3 @@
-
 on: [push, pull_request]
 
 jobs:
@@ -11,9 +10,15 @@ jobs:
 
       - name: Build
         uses: docker://ghcr.io/atopile/atopile-kicad
+        id: build
+        continue-on-error: true
 
       - name: Upload Combined Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build
           path: build
+
+      - name: Check build status
+        if: steps.build.outcome == 'failure'
+        run: exit 1
