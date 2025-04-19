@@ -16,3 +16,13 @@ dependencies:
   - type: registry
     identifier: eigenlucy/voltagewindowmonitor
     release: 0.1.3
+
+package:
+  identifier: eigenlucy/micromppt
+  repository: https://github.com/eigenlucy/micromppt
+  authors:
+    - name: Lucy Moglia
+      email: eigenlucy@proton.me
+  summary: 5W autonomous MPPT boost solar battery charger with embedded perturb and observe set point adjustment algorithm
+  license: MIT
+  homepage: https://eigenlucy.github.io/projects/micromppt/
