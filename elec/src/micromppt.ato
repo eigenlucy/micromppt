@@ -16,6 +16,7 @@ from "MINISMDC260F_slash_16.ato" import MINISMDC260F_slash_16
 from "B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen.ato" import B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen
 from "xb3306.ato" import XB3306
 from "b5819w.ato" import B5819W
+from "lf_0603l150slyr.ato" import Littlefuse_0603L150SLYR
 
 module Micromppt:
     # Based on STEVAL-ISV006V2 schematic
@@ -80,4 +81,5 @@ module Micromppt:
     bpc.VDD ~ R_bpc.p1; R_bpc.p2 ~ Vbatr.vcc
     Vbat.vcc ~ Vbatr.vcc; bpc.VM ~ Vbat.gnd
     Load_D = new B5819W
-    Vload_Conn.p1 ~ Vbat.vcc; Vload_Conn.p2 ~ Load_D.A; Load_D.K ~ Vbatr.gnd
+    ptc = new Littlefuse_0603L150SLYR
+    Vbat.vcc ~ ptc.p1; ptc.p2 ~ Vload_Conn.p1; Vload_Conn.p2 ~ Load_D.A; Load_D.K ~ Vbatr.gnd
