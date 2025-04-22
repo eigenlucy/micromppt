@@ -28,7 +28,7 @@ module Micromppt:
     # Components
     ic = new SPV1040T
     R1 = new Resistor; R1.value = 1Mohm +/- 10%; R1.package = "0402"
-    R2 = new Resistor; R2.value = 330kohm +/- 10%; R2.package = "0402"
+    R2 = new Resistor; R2.value = 423kohm +/- 10%; R2.package = "0402"
     R3 = new Resistor; R3.value = 1kohm +/- 10%; R3.package = "0402"
     Rf1 = new Resistor; Rf1.value = 1kohm +/- 10%; Rf1.package = "0402"
     Rf2 = new Resistor; Rf2.value = 1kohm +/- 10%; Rf2.package = "0402"
