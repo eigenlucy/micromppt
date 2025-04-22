@@ -1,5 +1,7 @@
 # [micromppt](https://eigenlucy.github.io/projects/micromppt/)
 
+![Micromppt V3 Rendering](micrompptV3.png)
+
 SPV1040 Based 5W MPPT Boost Charger With Autonomous Perturb-and-Observe Set Point Adjustment
 
 Tiny, versatile, high efficiency solar charging, designed with Meshtastic clients in mind
