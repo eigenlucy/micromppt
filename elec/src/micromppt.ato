@@ -14,6 +14,8 @@ from "bzx384.ato" import bzx384
 from "XH_minus_2PS.ato" import XH_minus_2PS
 from "MINISMDC260F_slash_16.ato" import MINISMDC260F_slash_16
 from "B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen.ato" import B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen
+from "xb3306.ato" import XB3306
+from "b5819w.ato" import B5819W
 
 module Micromppt:
     # Based on STEVAL-ISV006V2 schematic
@@ -41,6 +43,7 @@ module Micromppt:
     Dout = new SRV05_minus_4_minus_P_minus_T7_C19829547
     Vpv_Conn = new B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen
     Vbat_Conn = new B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen
+    Vload_Conn = new B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen
     Vpv.vcc ~ Vpv_Conn.p1; Vpv.gnd ~ Vpv_Conn.p2; power.gnd ~ Vpv_Conn.p2
     """
     # OVP
@@ -52,8 +55,9 @@ module Micromppt:
     """
     Vpv ~ Vpvr # temp fix
 
-
-    Vbat.vcc ~ Vbat_Conn.p1; Vbat.gnd ~ Vbat_Conn.p2; Vbat.gnd ~ power.gnd
+    Vbatr = new Power
+    Vbat.gnd ~ power.gnd
+    Vbatr.vcc ~ Vbat_Conn.p1; Vbatr.gnd ~ Vbat_Conn.p2;
     ic.GND ~ power.gnd
     Vpvr.vcc ~ Cin.p1; Cin.p2 ~ power.gnd
     Vpvr.vcc ~ R3.p1; R3.p2 ~ ic.MPP_minus_SET; ic.MPP_minus_SET ~ Cinsns.p1; Cinsns.p2 ~ power.gnd
@@ -68,3 +72,12 @@ module Micromppt:
     Rs.p2 ~ R1.p1; R1.p2 ~ ic.VCTRL
     R1.p2 ~ R2.p1; R2.p2 ~ power.gnd # This divider sets the output voltage
     Rs.p2 ~ Vbat.vcc; Vbat ~ Cout2.power
+    bpc = new XB3306
+    C_bpc = new Capacitor; C_bpc.value = 0.1uF +/- 20%; C_bpc.package = "C0402"
+    C_bpc.p1 ~ bpc.VDD; C_bpc.p2 ~ bpc.GND
+    bpc.GND ~ Vbatr.gnd
+    R_bpc = new Resistor; R_bpc.value = 100ohm +/- 10%; R_bpc.package = "R0402"
+    bpc.VDD ~ R_bpc.p1; R_bpc.p2 ~ Vbatr.vcc
+    Vbat.vcc ~ Vbatr.vcc; bpc.VM ~ Vbat.gnd
+    Load_D = new B5819W
+    Vload_Conn.p1 ~ Vbat.vcc; Vload_Conn.p2 ~ Load_D.A; Load_D.K ~ Vbatr.gnd

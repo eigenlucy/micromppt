@@ -1,0 +1,12 @@
+component XB3306:
+    """XySemi_XB3306D component"""
+    lcsc_id = "C2759992"
+    manufacturer = "XySemi"
+    mpn = "XB3306D"
+    datasheet_url = "https://www.lcsc.com/datasheet/lcsc_datasheet_2106062206_XySemi-XB3306D_C2759992.pdf"
+    designator_prefix = "U"
+
+    # pins
+    signal GND ~ pin 3
+    signal VDD ~ pin 2
+    signal VM ~ pin 1
