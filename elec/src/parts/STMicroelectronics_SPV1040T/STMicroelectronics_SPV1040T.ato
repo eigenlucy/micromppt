@@ -1,0 +1,24 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component STMicroelectronics_SPV1040T_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2969792", date="2025-08-28T17:42:19.717214+00:00", checksum="4428da9b3cf74746bad6c17c6be37389bdddeda2f2226f3639f6b616b37a91af">
+
+    trait is_atomic_part<manufacturer="STMicroelectronics", partnumber="SPV1040T", footprint="TSSOP-8_L4.4-W3.0-P0.65-LS6.4-BL.kicad_mod", symbol="SPV1040T.kicad_sym", model="TSSOP-8_L3.0-W4.4-H1.0-LS6.4-P0.65.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2969792", manufacturer="STMicroelectronics", partno="SPV1040T">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal GND ~ pin 2
+    signal ICTRL_MINUS ~ pin 6
+    signal ICTRL_PLUS ~ pin 7
+    signal LX ~ pin 3
+    signal MPP_SET ~ pin 1
+    signal VCTRL ~ pin 5
+    signal VOUT ~ pin 4
+    signal XSHUT ~ pin 8

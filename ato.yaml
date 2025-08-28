@@ -1,9 +1,8 @@
-requires-atopile: ^0.4.1
+requires-atopile: ^0.11.6
 
 paths:
   src: ./elec/src
   layout: ./elec/layout
-  footprints: ./elec/footprints
 
 builds:
   default:

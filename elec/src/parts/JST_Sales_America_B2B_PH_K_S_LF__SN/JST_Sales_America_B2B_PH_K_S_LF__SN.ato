@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component JST_Sales_America_B2B_PH_K_S_LF__SN_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C131337", date="2025-08-28T17:42:19.036882+00:00", checksum="1b3f8dcb275df1ef3d997ac65d566782f0717d34dabe35152f66e62467cac463">
+
+    trait is_atomic_part<manufacturer="JST Sales America", partnumber="B2B-PH-K-S(LF)(SN)", footprint="CONN-TH_B2B-PH-K-S.kicad_mod", symbol="B2B-PH-K-S(LF)(SN).kicad_sym", model="CONN-TH_PH2.00-LI-2P.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C131337", manufacturer="JST Sales America", partno="B2B-PH-K-S(LF)(SN)">
+    trait has_designator_prefix<prefix="CN">
+
+    # pins
+    pin 1
+    pin 2

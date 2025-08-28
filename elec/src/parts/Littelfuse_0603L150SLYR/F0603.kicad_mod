@@ -1,0 +1,186 @@
+(footprint "Littelfuse_0603L150SLYR:F0603"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "6202333e-c9e9-4045-9946-5a985da2624a")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "F0603"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "415baa22-e9c1-4dde-8df6-18af91beffe5")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "160567ff610c28141715a6b92867421a99a00275c8499f9539bdaa7c74992bae"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "86e487d3-8cd0-4f89-b91b-8ab78f66b822")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start 1.4 -0.38)
+        (end 1.4 0.38)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "184ab953-0dec-49c3-b291-d5645d8f22c9")
+    )
+    (fp_line
+        (start -1.4 -0.38)
+        (end -1.4 0.38)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "81e2656c-238f-469c-858d-b3791b8a0e40")
+    )
+    (fp_line
+        (start -0.38 0.63)
+        (end -1.14 0.63)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f6d6f8e3-f8ba-4343-a567-0ea62a9b16e0")
+    )
+    (fp_line
+        (start -0.38 -0.63)
+        (end -1.14 -0.63)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "283eea52-cb88-4b5d-b9f6-8295427949c9")
+    )
+    (fp_line
+        (start 0.38 0.63)
+        (end 1.14 0.63)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "8333d910-c5d2-4959-98ed-a71a8dfb986e")
+    )
+    (fp_line
+        (start 0.38 -0.63)
+        (end 1.14 -0.63)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f6a9493b-1934-43c9-b653-7d98af7d2cbf")
+    )
+    (fp_arc
+        (start 0.13 -0.38)
+        (mid -0.12748275322566124 -0.22216810199142306)
+        (end -0.030293544134933043 0.06377338480959244)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "82fbe5d7-4aeb-418e-b58d-a7a9d8b3e70c")
+    )
+    (fp_arc
+        (start -0.13 0.51)
+        (mid -0.02799480068216542 0.05044508447015933)
+        (end -0.13400643823839478 0.5090923495641059)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "bfc9f303-c806-4330-9e38-ef206c48b5bf")
+    )
+    (fp_circle
+        (center -0.8 0.4)
+        (end -0.77 0.4)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "474f5592-5009-4d5e-92ef-bc940a215c16")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "467bb4c4-b5a1-4976-800f-ab8c2bf99abe")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "6202333e-c9e9-4045-9946-5a985da2624a")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "2" smd rect
+        (at 0.75 0 0)
+        (size 0.81 0.86)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "c36e7ff9-12f6-4257-8caf-247ac4d915b1")
+    )
+    (pad "1" smd rect
+        (at -0.75 0 0)
+        (size 0.81 0.86)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "72031444-9463-4a4d-9a76-f7baf648f8d5")
+    )
+    (model "${KIPRJMOD}/../../src/parts/Littelfuse_0603L150SLYR/F0603_L1.7-W0.9-H0.7.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

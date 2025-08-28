@@ -1,0 +1,170 @@
+(footprint "TECH_PUBLIC_SRV05_4_P_T7:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4.95 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "311999f1-6ba0-4839-8914-5bcc24522e82")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
+        (at 0 4.95 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "746fd0ab-5d57-4af7-861c-b96df314185e")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "9d67ec81a850820697d476a8beac33a0c41b68f619c0752c7d2d9b8c312131b0"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "80d09e15-e3e5-46a5-90c8-1f2fc556d5f7")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start -0.9 -1.55)
+        (end 0.9 -1.55)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "9147b352-ac9e-4769-89fb-e31b3eab2054")
+    )
+    (fp_line
+        (start -0.9 1.55)
+        (end 0.9 1.55)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "0529fbe8-6bde-4ed6-8ac1-1da0ab096c66")
+    )
+    (fp_circle
+        (center 1.4 1.45)
+        (end 1.43 1.45)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "8b850011-f102-43f6-b691-1e326a2176e8")
+    )
+    (fp_circle
+        (center 1.4 0.95)
+        (end 1.5 0.95)
+        (stroke
+            (width 0.2)
+            (type solid)
+        )
+        (fill no)
+        (layer "Cmts.User")
+        (uuid "60bcc5b2-9caa-40d5-bece-cc5abdc518bb")
+    )
+    (fp_circle
+        (center 1.4 1.65)
+        (end 1.53 1.65)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.SilkS")
+        (uuid "57ca77b9-6abb-40df-a1d3-94a8b0345c7b")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "ebcbe397-c190-43b7-9257-faf25c8b7783")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4.95 0)
+        (layer "F.SilkS")
+        (uuid "311999f1-6ba0-4839-8914-5bcc24522e82")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "3" smd rect
+        (at 1.35 -0.95 0)
+        (size 1.1 0.6)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "29c05db4-bea2-4efc-9952-bd587e7cd656")
+    )
+    (pad "2" smd rect
+        (at 1.35 0 0)
+        (size 1.1 0.6)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "6008d9e6-2819-496d-b14d-e13eceb2e8c6")
+    )
+    (pad "1" smd rect
+        (at 1.35 0.95 0)
+        (size 1.1 0.6)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "e7ade8c7-60cf-4c91-89a2-4eb6a5fd7bf4")
+    )
+    (pad "6" smd rect
+        (at -1.35 0.95 0)
+        (size 1.1 0.6)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "fce1e715-7afa-4e48-9d49-3c69e9cb8f80")
+    )
+    (pad "5" smd rect
+        (at -1.35 0 0)
+        (size 1.1 0.6)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "f2df0cf6-7673-4e79-9af1-a148f4e56b6e")
+    )
+    (pad "4" smd rect
+        (at -1.35 -0.95 0)
+        (size 1.1 0.6)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "519ef7ed-ed1e-48d5-b6e4-40a8dd83c769")
+    )
+    (model "${KIPRJMOD}/../../src/parts/TECH_PUBLIC_SRV05_4_P_T7/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 180)
+        )
+    )
+)

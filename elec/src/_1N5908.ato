@@ -1,9 +1,0 @@
-component _1N5908:
-    # component _1N5908
-    footprint = "DO-201_BD5.3-L9.5-P13.50-D1.4-RD"
-    lcsc_id = "C1665805"
-    mpn = "C1665805"
-    # pins
-    signal anode ~ pin 2
-    signal cathode ~ pin 1
-

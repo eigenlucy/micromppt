@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Littelfuse_0603L150SLYR_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C207018", date="2025-08-28T17:42:20.916442+00:00", checksum="d10c8ee37089f515b765d3cb732b972da9f3c965cd24c6f5fd1a3e45c059602a">
+
+    trait is_atomic_part<manufacturer="Littelfuse", partnumber="0603L150SLYR", footprint="F0603.kicad_mod", symbol="0603L150SLYR.kicad_sym", model="F0603_L1.7-W0.9-H0.7.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C207018", manufacturer="Littelfuse", partno="0603L150SLYR">
+    trait has_designator_prefix<prefix="F">
+
+    # pins
+    pin 2
+    pin 1

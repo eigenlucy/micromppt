@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component GOODWORK_B5819W_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2943878", date="2025-08-28T17:42:17.395438+00:00", checksum="7112226652a99fa07ae6eeffaa1d5ae2b1300d7591266b097706d6dd0112cbc8">
+
+    trait is_atomic_part<manufacturer="GOODWORK", partnumber="B5819W", footprint="SOD-123F_L2.7-W1.6-LS3.8-RD-1.kicad_mod", symbol="B5819W_C2943878.kicad_sym", model="SOD-123F_L2.7-W1.6-LS3.8-RD-1.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2943878", manufacturer="GOODWORK", partno="B5819W">
+    trait has_designator_prefix<prefix="D">
+
+    # pins
+    signal A ~ pin 2
+    signal K ~ pin 1

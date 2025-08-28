@@ -1,0 +1,144 @@
+(footprint "Coilcraft_XAL6060_103MEC:IND-SMD_L6.6-W6.4"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "f5d7167b-56fe-4b88-8c54-d9f7fec43c5c")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "IND-SMD_L6.6-W6.4"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "9dc80473-79e7-410f-b588-8d720f575ed1")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "5f25190d54851d577e8492d507626c33859ce747252cf547bb0ac2506f342c8d"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "4e3f6960-c44b-41c2-babb-95244b69cdf9")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start -3.3 -3.2)
+        (end 3.3 -3.2)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "959b499b-336b-4133-95b8-f499b3203a8c")
+    )
+    (fp_line
+        (start 3.3 -3.2)
+        (end 3.3 3.2)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "c578ffe2-1017-439d-9e35-a64ad6234cc0")
+    )
+    (fp_line
+        (start 3.3 3.2)
+        (end -3.3 3.2)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "7e288b9c-14ba-400f-aa86-a926ecb26ea4")
+    )
+    (fp_line
+        (start -3.3 3.2)
+        (end -3.3 -3.2)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "b1bd47db-afa8-425e-87e3-5d7dab184924")
+    )
+    (fp_circle
+        (center -3.3 3.2)
+        (end -3.27 3.2)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "014169ef-ea45-45f3-a44d-d42d70f711fd")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "5e134366-a637-4b60-995f-ed650015761a")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "f5d7167b-56fe-4b88-8c54-d9f7fec43c5c")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "2" smd rect
+        (at 2.02 0 0)
+        (size 1.55 5.6)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "ccbdd4d6-eb5d-4d93-9b1f-a75875be0b98")
+    )
+    (pad "1" smd rect
+        (at -2.02 0 0)
+        (size 1.55 5.6)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "6587f909-9dc6-4595-8f11-9ea680ade316")
+    )
+    (model "${KIPRJMOD}/../../src/parts/Coilcraft_XAL6060_103MEC/IND-SMD_L6.6-W6.4-H2.9.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)
