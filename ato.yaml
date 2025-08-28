@@ -12,8 +12,16 @@ package:
   identifier: eigenlucy/micromppt
   repository: https://github.com/eigenlucy/micromppt
   authors:
-    - name: Lucy Moglia
-      email: eigenlucy@proton.me
-  summary: 5W autonomous MPPT boost solar battery charger with embedded perturb and observe set point adjustment algorithm
+  - name: Lucy Moglia
+    email: eigenlucy@proton.me
+  summary: 5W autonomous MPPT boost solar battery charger with embedded perturb 
+    and observe set point adjustment algorithm
   license: MIT
   homepage: https://github.com/eigenlucy/micromppt
+dependencies:
+- type: registry
+  identifier: atopile/xt-connectors
+  release: 0.1.6
+- type: registry
+  identifier: atopile/usb-connectors
+  release: 0.2.2

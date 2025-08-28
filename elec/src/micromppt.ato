@@ -1,22 +1,28 @@
+#pragma experiment("BRIDGE_CONNECT")
+
 import ElectricPower
+import ElectricSignal
+import ElectricLogic
 import Inductor
 import Capacitor
 import Resistor
 import Diode
-from "generics/connectors.ato" import Connector2Pin
+import Fuse
 from "parts/Coilcraft_XAL6060_103MEC/Coilcraft_XAL6060_103MEC.ato" import Coilcraft_XAL6060_103MEC_package
 from "parts/STMicroelectronics_1N5908/STMicroelectronics_1N5908.ato" import STMicroelectronics_1N5908_package
 from "parts/STMicroelectronics_SPV1040T/STMicroelectronics_SPV1040T.ato" import STMicroelectronics_SPV1040T_package
-from "_3224W_minus_1_minus_105E.ato" import _3224W_minus_1_minus_105E
 from "parts/TECH_PUBLIC_SRV05_4_P_T7/TECH_PUBLIC_SRV05_4_P_T7.ato" import TECH_PUBLIC_SRV05_4_P_T7_package
-from "irlml5203.ato" import irlml5203
-from "bzx384.ato" import bzx384
-from "XH_minus_2PS.ato" import XH_minus_2PS
-from "MINISMDC260F_slash_16.ato" import MINISMDC260F_slash_16
 from "parts/JST_Sales_America_B2B_PH_K_S_LF__SN/JST_Sales_America_B2B_PH_K_S_LF__SN.ato" import JST_Sales_America_B2B_PH_K_S_LF__SN_package
 from "parts/XySemi_XB3306D/XySemi_XB3306D.ato" import XySemi_XB3306D_package
 from "parts/GOODWORK_B5819W/GOODWORK_B5819W.ato" import GOODWORK_B5819W_package
 from "parts/Littelfuse_0603L150SLYR/Littelfuse_0603L150SLYR.ato" import Littelfuse_0603L150SLYR_package
+
+# Unused imports?
+from "irlml5203.ato" import irlml5203
+from "bzx384.ato" import bzx384
+from "XH_minus_2PS.ato" import XH_minus_2PS
+from "MINISMDC260F_slash_16.ato" import MINISMDC260F_slash_16
+from "_3224W_minus_1_minus_105E.ato" import _3224W_minus_1_minus_105E
 
 module Micromppt:
     # Based on STEVAL-ISV006V2 schematic
@@ -40,49 +46,54 @@ module Micromppt:
     Cinsns = new Capacitor; Cinsns.capacitance = 100nF +/- 20%; Cinsns.package = "0402"
     Coutsns = new Capacitor; Coutsns.capacitance = 1nF +/- 20%; Coutsns.package = "0402"
     Cf = new Capacitor; Cf.capacitance = 1uF +/- 20%; Cf.package = "0402"
-    SW_L = new Coilcraft_XAL6060_103MEC_package
+    SW_L = new Inductor; SW_L.lcsc_id = "C5329540"
     Dout = new TECH_PUBLIC_SRV05_4_P_T7_package
     Vpv_Conn = new JST_Sales_America_B2B_PH_K_S_LF__SN_package
     Vbat_Conn = new JST_Sales_America_B2B_PH_K_S_LF__SN_package
     Vload_Conn = new JST_Sales_America_B2B_PH_K_S_LF__SN_package
-    Vpv.vcc ~ Vpv_Conn.1; Vpv.gnd ~ Vpv_Conn.2; power.gnd ~ Vpv_Conn.2
+    Vpv.hv ~ Vpv_Conn.1; Vpv.lv ~ Vpv_Conn.2; power.lv ~ Vpv_Conn.2
     """
     # OVP
     IN_FET = new irlml5203
     IN_Zener = new bzx384
     R_InputPullup = new Resistor; R_InputPullup.value = 10kohm +/- 20%; R_InputPullup.package = "0402"
-    Vpv.vcc ~ IN_FET.D; IN_FET.S ~ Vpvr.vcc
-    IN_FET.S ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.gnd
+    Vpv.hv ~ IN_FET.D; IN_FET.S ~ Vpvr.hv
+    IN_FET.S ~ IN_Zener.C; IN_FET.G ~ IN_Zener.A; IN_FET.G ~ R_InputPullup.p1; R_InputPullup.p2 ~ power.lv
     """
     Vpv ~ Vpvr # temp fix
 
     Vbatr = new ElectricPower
-    Vbat.gnd ~ power.gnd
-    Vbatr.vcc ~ Vbat_Conn.1; Vbatr.gnd ~ Vbat_Conn.2;
-    ic.GND ~ power.gnd
-    Vpvr.vcc ~ Cin.p1; Cin.p2 ~ power.gnd
-    Vpvr.vcc ~ R3.p1; R3.p2 ~ ic.MPP_SET; ic.MPP_SET ~ Cinsns.p1; Cinsns.p2 ~ power.gnd
-    signal XSHUT; XSHUT ~ ic.XSHUT # Shutdown/enable pin. Connect to MPPT-SET to startup from solar panel Vin
+    Vbat.lv ~ power.lv
+    Vbatr.hv ~ Vbat_Conn.1; Vbatr.lv ~ Vbat_Conn.2;
+    ic.GND ~ power.lv
+    Vpvr.hv ~> Cin ~> power.lv
+    Vpvr.hv ~> R3 ~> ic.MPP_SET;
+    ic.MPP_SET ~> Cinsns ~> power.lv
+    XSHUT = new ElectricLogic; XSHUT.line ~ ic.XSHUT # Shutdown/enable pin. Connect to MPPT-SET to startup from solar panel Vin
     ic.XSHUT ~ ic.MPP_SET
-    Vpvr.vcc ~ SW_L.1; SW_L.2 ~ ic.LX
-    ic.VCTRL ~ Coutsns.p1; Coutsns.p2 ~ power.gnd
+    Vpvr.hv ~> SW_L ~> ic.LX
+    ic.VCTRL ~> Coutsns ~> power.lv
     ic.VOUT ~ Rs.p1
-    # Map ESD array: pins 6/5/4 to VOUT, pins 3/2/1 to GND
+    # Map ESD array: pins 6/5/4 to VOUT, pins 3/2/1 to lv
     ic.VOUT ~ Dout.6; ic.VOUT ~ Dout.5; ic.VOUT ~ Dout.4
-    power.gnd ~ Dout.3; power.gnd ~ Dout.2; power.gnd ~ Dout.1
-    ic.VOUT ~ Cout1.p1; Cout1.p2 ~ power.gnd
+    power.lv ~ Dout.3; power.lv ~ Dout.2; power.lv ~ Dout.1
+    ic.VOUT ~ Cout1.p1; Cout1.p2 ~ power.lv
     ic.ICTRL_PLUS ~ Cf.p1; ic.ICTRL_PLUS ~ Rf1.p1; Rf1.p2 ~ Rs.p1
     ic.ICTRL_MINUS ~ Cf.p2; ic.ICTRL_MINUS ~ Rf2.p1; Rf2.p2 ~ Rs.p2
     Rs.p2 ~ R1.p1; R1.p2 ~ ic.VCTRL
-    R1.p2 ~ R2.p1; R2.p2 ~ power.gnd # This divider sets the output voltage
-    Rs.p2 ~ Vbat.vcc; Vbat ~ Cout2.power
+    R1.p2 ~ R2.p1; R2.p2 ~ power.lv # This divider sets the output voltage
+    Rs.p2 ~ Vbat.hv; Vbat ~ Cout2.power
     bpc = new XySemi_XB3306D_package
-    C_bpc = new Capacitor; C_bpc.value = 0.1uF +/- 20%; C_bpc.package = "C0402"
-    C_bpc.p1 ~ bpc.VDD; C_bpc.p2 ~ bpc.GND
-    bpc.GND ~ Vbatr.gnd
-    R_bpc = new Resistor; R_bpc.value = 100ohm +/- 10%; R_bpc.package = "R0402"
-    bpc.VDD ~ R_bpc.p1; R_bpc.p2 ~ Vbatr.vcc
-    Vbat.vcc ~ Vbatr.vcc; bpc.VM ~ Vbat.gnd
-    Load_D = new GOODWORK_B5819W_package
+    C_bpc = new Capacitor; C_bpc.value = 0.1uF +/- 20%; C_bpc.package = "0402"
+    bpc.VDD ~> C_bpc ~> bpc.GND
+    bpc.GND ~ Vbatr.lv
+    R_bpc = new Resistor; R_bpc.value = 100ohm +/- 10%; R_bpc.package = "0402"
+    bpc.VDD ~ R_bpc.p1; R_bpc.p2 ~ Vbatr.hv
+    Vbat.hv ~ Vbatr.hv; bpc.VM ~ Vbat.lv
+    Load_D = new Diode; Load_D.lcsc_id = "C2943878"
     ptc = new Littelfuse_0603L150SLYR_package
-    Vbat.vcc ~ ptc.1; ptc.2 ~ Vload_Conn.1; Vload_Conn.2 ~ Load_D.A; Load_D.K ~ Vbatr.gnd
+    Vload_Conn.1 ~ ptc.2; ptc.1 ~> Vbat.hv;
+    Vload_Conn.2 ~> Load_D ~> Vbatr.lv
+
+    Vpv.hv.override_net_name = "Vpv"
+    Vbat.hv.override_net_name = "Vbat"
