@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component STMicroelectronics_1N5908_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C1665805", date="2025-08-28T17:41:26.480697+00:00", checksum="55dd91976b359c0cb61aa8dbfc61d477a828f8582d39ac72255cf646162f32c7">
+
+    trait is_atomic_part<manufacturer="STMicroelectronics", partnumber="1N5908", footprint="DO-201_BD5.3-L9.5-P13.50-D1.4-RD.kicad_mod", symbol="1N5908.kicad_sym", model="DO-201AD_D5.3-L8.4-P13.6.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C1665805", manufacturer="STMicroelectronics", partno="1N5908">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal A ~ pin 2
+    signal K ~ pin 1

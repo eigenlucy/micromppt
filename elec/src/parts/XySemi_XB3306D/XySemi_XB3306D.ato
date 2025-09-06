@@ -1,0 +1,19 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component XySemi_XB3306D_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2759992", date="2025-08-28T17:42:19.371196+00:00", checksum="a9084ca16d5555055aa5a72361bf23ba3515bf86725e4002a5501fed4a43347a">
+
+    trait is_atomic_part<manufacturer="XySemi", partnumber="XB3306D", footprint="SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR.kicad_mod", symbol="XB3306D.kicad_sym", model="SOT-23-3P_L2.9-W1.3-H1.0-LS2.4-P0.95.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2759992", manufacturer="XySemi", partno="XB3306D">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal GND ~ pin 3
+    signal VDD ~ pin 2
+    signal VM ~ pin 1

@@ -1,9 +1,0 @@
-component B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen:
-    # component B2B_minus_PH_minus_K_minus_S_lparen_LF_rparen_lparen_SN_rparen
-    footprint = "CONN-TH_B2B-PH-K-S"
-    lcsc_id = "C131337"
-    mpn = "C131337"
-    # pins
-    signal p1 ~ pin 1
-    signal p2 ~ pin 2
-

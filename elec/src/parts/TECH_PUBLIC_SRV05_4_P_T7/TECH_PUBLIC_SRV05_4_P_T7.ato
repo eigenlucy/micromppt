@@ -1,0 +1,22 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component TECH_PUBLIC_SRV05_4_P_T7_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C19829547", date="2025-08-28T17:42:17.007176+00:00", checksum="b2d7ae07fc98884b0f42a57c3f51ef14e0fb3589634ccfadd4ee0acde7383ff2">
+
+    trait is_atomic_part<manufacturer="TECH PUBLIC", partnumber="SRV05-4-P-T7", footprint="SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR.kicad_mod", symbol="SRV05-4-P-T7_C19829547.kicad_sym", model="SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C19829547", manufacturer="TECH PUBLIC", partno="SRV05-4-P-T7">
+    trait has_designator_prefix<prefix="D">
+
+    # pins
+    pin 6
+    pin 5
+    pin 4
+    pin 3
+    pin 2
+    pin 1
